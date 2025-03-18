@@ -1,20 +1,17 @@
 import java.util.*;
 
-class Main {
-    private Board board;
-    private User player1, player2;
-    private User currentPlayer;
-
-    public Main() {
-        board = new Board();
-    }
-
-    public void startGame() {
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Grid board;
+        User player1, player2, currentPlayer;
+
         System.out.println("Welcome to Tic Tac Toe!");
 
         while (true) {
+            board = new Grid();
             boolean vsComputer;
+
             while (true) {
                 System.out.print("Play against the computer? (Y/N): ");
                 String input = scanner.nextLine().trim().toLowerCase();
@@ -39,14 +36,13 @@ class Main {
                 System.out.print("Player 2, enter your name: ");
                 name2 = scanner.nextLine().trim();
                 if (name1.equalsIgnoreCase(name2)) {
-                    System.out.println("Error: Players cannot have the same name. Restarting...");
+                    System.out.println("Error: Players cannot have the same name.");
                     continue;
                 }
             }
 
-            player1 = new Human(name1, Symbol.X);
-            player2 = vsComputer ? new Computer(name2, Symbol.O) : new Human(name2, Symbol.O);
-
+            player1 = new Human(name1, 'X');
+            player2 = vsComputer ? new Computer(name2, 'O') : new Human(name2, 'O');
             currentPlayer = player1;
 
             while (true) {
@@ -77,18 +73,11 @@ class Main {
                 currentPlayer = (currentPlayer == player1) ? player2 : player1;
             }
 
-            System.out.print("Play again? (Y/N): ");
+            System.out.print("Press Y to play again press any key to stop): ");
             if (!scanner.nextLine().trim().equalsIgnoreCase("Y")) {
                 break;
             }
-            board = new Board();
         }
         scanner.close();
     }
-
-    public static void main(String[] args) {
-        new Main().startGame();
-    }
 }
-
-
