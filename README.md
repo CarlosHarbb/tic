@@ -20,7 +20,7 @@ How to run:
 5. Enter your move using grid coordinates (e.g., 'A1', 'B3').
 6. The game will validate the move and update the board.
 7. The game continues until a player wins or the board is full.
-8. After the game ends, you will be asked if you want to play again. Enter 'Y' to restart or 'N' to exit.
+8. After the game ends, you will be asked if you want to play again. Enter 'Y' to restart or any key to exit.
 
 ## Error Handling
 - If an invalid move is entered (e.g., out-of-range coordinates or an already occupied square), the game will prompt you to try again.
