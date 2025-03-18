@@ -1,8 +1,8 @@
 class Square {
-    private char symbol;
+    private char symbol; //symbol present in the square
 
-    public Square() {
-        this.symbol = Symbol.EMPTY;
+    public Square() { //contructor for class
+        this.symbol = '-'; //set the symbol in the square to null
     }
 
     public char getSymbol() {
@@ -14,6 +14,6 @@ class Square {
     }
 
     public boolean isEmpty() {
-        return symbol == Symbol.EMPTY;
+        return symbol == '-'; //
     }
-}//grsgsg
+}
